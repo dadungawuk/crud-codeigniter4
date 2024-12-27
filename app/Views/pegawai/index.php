@@ -31,7 +31,10 @@
                 <a href="/pegawai/show/<?= $row->id; ?>" class="btn btn-info">Detail</a>
                 <a href="/pegawai/edit/<?= $row->id; ?>" class="btn btn-warning">Edit</a>
                 <?= csrf_field(); ?>
-                <button type="button" class="btn btn-danger" onclick="konfirmasi(this)">Hapus</button>
+
+                <?php if (session()->get('role') == 'admin'): ?>
+                  <button type="button" class="btn btn-danger" onclick="konfirmasi(this)">Hapus</button>
+                <?php endif; ?>
               </form>
             </td>
           </tr>

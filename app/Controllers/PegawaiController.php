@@ -153,6 +153,11 @@ class PegawaiController extends BaseController
 
     public function delete($id)
     {
+        // cek role harus admin
+        // if (session()->get('role') != 'admin') {
+        //     return redirect()->to('/401')->with('error', 'Anda tidak memiliki hak akses menghapus data pegawai.');
+        // }
+
         // $this->modelPegawai->delete($id);
         $pegawai = $this->modelPegawai->find($id);
         if ($pegawai) {

@@ -13,10 +13,10 @@ class JabatanController extends BaseController
 
     public function __construct()
     {
-        if (!session()->get('login')) {
-            redirect()->to('/login')->with('error', 'harus login dulu ya..')->send();
-            exit;
-        }
+        // if (!session()->get('login')) {
+        //     redirect()->to('/login')->with('error', 'harus login dulu ya..')->send();
+        //     exit;
+        // }
         $this->modelJabatan = new JabatanModel();
     }
 
